@@ -20,11 +20,19 @@
             margin-bottom: 20px; /* Margen inferior para separar del siguiente elemento */
             text-align: left; /* Alineación del texto a la izquierda */
             width: calc(100% - 40px); /* Ancho total menos los márgenes */
+            opacity: 0; /* Inicialmente oculto */
+            transform: translateY(20px); /* Desplazado hacia abajo */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
         }
         .corazones {
             color: red; /* Color rojo para los corazones */
             font-size: 24px; /* Tamaño de fuente para los corazones */
             margin-top: 10px; /* Margen superior para separar los corazones del texto */
+        }
+        /* Agregar animación al hacer scroll */
+        .mensaje-container.aparecer {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -35,7 +43,37 @@
         <div class="mensaje">Tu belleza trasciende lo físico; es tu alma la que brilla con luz propia. Pero más allá de eso, es tu corazón noble y generoso el que me ha cautivado.</div>
         <div class="mensaje">En este día tan especial, quiero recordarte lo especial que eres para mí. Tu esencia irradia luz y alegría, y no puedo evitar sentirme afortunado de tenerte en mi vida. Que este nuevo año que comienzas esté lleno de bendiciones, amor y felicidad. Que cada sueño que persigas se convierta en realidad, y que yo pueda seguir siendo parte de tu camino, caminando juntos hacia un futuro lleno de amor y complicidad.</div>
         <div class="mensaje">Feliz cumpleaños, mi amada Julieta. Que este día esté lleno de sonrisas, abrazos y momentos inolvidables. Te amo más de lo que las palabras pueden expresar.</div>
-    <p class="corazones">&#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;</p>
-    <p>Atentamente con todo mi cariño, osmarvzvs.</p>
+        <p class="corazones">&#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;</p>
+        <p>Atentamente con todo mi cariño, osmarvzvs.</p>
+    </div>
+
+    <script>
+        // Función para verificar si un elemento está visible en la ventana
+        function isVisible(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Función para manejar la animación al hacer scroll
+        function handleScrollAnimation() {
+            const elementos = document.querySelectorAll('.mensaje-container');
+            elementos.forEach(elemento => {
+                if (isVisible(elemento)) {
+                    elemento.classList.add('aparecer');
+                }
+            });
+        }
+
+        // Agregar evento de scroll para activar la animación
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // Activar la animación al cargar la página
+        handleScrollAnimation();
+    </script>
 </body>
 </html>
