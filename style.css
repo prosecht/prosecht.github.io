@@ -14,7 +14,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c7c7c7
+    background-color: #AE89BD
     ;
 }
 p {
@@ -30,7 +30,7 @@ p {
     height: 950px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #c7c7c7;
+    background-color: #AE89BD;
     border: 1px solid #7D53F5;
     border-radius: 6px;
     box-shadow: 0 0 15px #7D53F5;
