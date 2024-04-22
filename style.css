@@ -14,7 +14,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #AE89BD
+    background-color: #f1d7e8
     ;
 }
 p {
@@ -30,10 +30,10 @@ p {
     height: 950px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #AE89BD;
-    border: 1px solid #7D53F5;
+    background-color: #f1d7e8;
+    border: 1px solid #b58ebc;
     border-radius: 6px;
-    box-shadow: 0 0 15px #7D53F5;
+    box-shadow: 0 0 15px #b58ebc;
 }
 .corazones {
     text-align: center;
@@ -42,9 +42,9 @@ p {
     margin-top: 20px;
     width: 400px;
     height: 550px;
-    border: 1px solid #7D53F5;
+    border: 1px solid #b58ebc;
     border-radius: 6px;
-    box-shadow: 0 0 15px #7D53F5;
+    box-shadow: 0 0 15px #b58ebc;
 }
 .pie-de-pagina {
     margin-top: 0;
